@@ -18,15 +18,30 @@ import segno
 # At this point, Custom QR Code is finished.
 
 def quick_qr:
-    if info_type = text:
+    if info_type == text:
         pass
-    elif info_type = link:
+    elif info_type == link:
         pass
-    elif info_type = contact:
+    elif info_type == contact:
         pass
-    elif info_type = wifi:
+    elif info_type == wifi:
         pass
-    elif info_type = geo:
+    elif info_type == geo:
+        pass
+    else:
+        print('This feature is not yet implemented :(')
+        break
+
+def custom_qr:
+    if info_type == text:
+        pass
+    elif info_type == link:
+        pass
+    elif info_type == contact:
+        pass
+    elif info_type == wifi:
+        pass
+    elif info_type == geo:
         pass
     else:
         print('This feature is not yet implemented :(')
