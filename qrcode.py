@@ -28,6 +28,7 @@ def start():
     while True:
         print("1. Quick QR Code")
         print("2. Custom QR Code")
+        print("0. Exit")
 
         mode_choice = input("Please select between Quick QR Code or Custom QR Code: ").strip()
 
@@ -36,6 +37,9 @@ def start():
             break
         elif mode_choice == '2':
             custom_qr()
+            break
+        elif mode_choice == '0':
+            print("Exiting QR Code Generator.")
             break
         else:
             print('Please type a valid number.')
@@ -81,41 +85,9 @@ def info_content(info_type_choice):
         return None
 
 def quick_qr():
-    info_type_choice = info_type()
-    if info_type_choice == 'text':
-        pass
-    elif info_type_choice == 'link':
-        pass
-    elif info_type_choice == 'contact':
-        pass
-    elif info_type_choice == 'wifi':
-        pass
-    elif info_type_choice == 'geo':
-        pass
-    elif info_type_choice == 'image':
-        pass
-    elif info_type_choice == 'epc':
-        pass
-    else:
-        print('Error: Cannot establish information type.')
+    pass
 
 def custom_qr():
-    info_type_choice = info_type()
-    if info_type_choice == 'text':
-        pass
-    elif info_type_choice == 'link':
-        pass
-    elif info_type_choice == 'contact':
-        pass
-    elif info_type_choice == 'wifi':
-        pass
-    elif info_type_choice == 'geo':
-        pass
-    elif info_type_choice == 'image':
-        pass
-    elif info_type_choice == 'epc':
-        pass
-    else:
-        print('Error: Cannot establish information type.')
+    pass
 
 start()
