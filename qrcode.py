@@ -17,22 +17,28 @@ import segno
         # If custom image option is chosen, ask user for filepath to image
 # At this point, Custom QR Code is finished.
 
-def quick_qr:
-    if info_type == text:
-        pass
-    elif info_type == link:
-        pass
-    elif info_type == contact:
-        pass
-    elif info_type == wifi:
-        pass
-    elif info_type == geo:
-        pass
-    else:
-        print('This feature is not yet implemented :(')
-        break
+# Future Plans:
+    # Add GUI
+    # Implement image encoding
+    # Implement EPC QR Codes
+    # Add web dev functionalities
 
-def custom_qr:
+def start():
+    print("=== QR Code Generator ===")
+    while True:
+        print("1. Quick QR Code")
+        print("2. Custom QR Code")
+
+        mode = input("Please select between Quick QR Code or Custom QR Code: ").strip()
+
+        if mode == '1':
+            quick_qr()
+        elif mode == '2':
+            custom_qr()
+        else:
+            print('Please type a valid number.')
+
+def quick_qr():
     if info_type == text:
         pass
     elif info_type == link:
@@ -45,4 +51,21 @@ def custom_qr:
         pass
     else:
         print('This feature is not yet implemented :(')
-        break
+        pass
+
+def custom_qr():
+    if info_type == text:
+        pass
+    elif info_type == link:
+        pass
+    elif info_type == contact:
+        pass
+    elif info_type == wifi:
+        pass
+    elif info_type == geo:
+        pass
+    else:
+        print('This feature is not yet implemented :(')
+        pass
+
+start()
