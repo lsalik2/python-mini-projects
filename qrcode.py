@@ -29,15 +29,11 @@ def start():
         print("1. Quick QR Code")
         print("2. Custom QR Code")
         print("0. Exit")
-
         mode_choice = input("Please select between Quick QR Code or Custom QR Code: ").strip()
-
         if mode_choice == '1':
             quick_qr()
-            break
         elif mode_choice == '2':
             custom_qr()
-            break
         elif mode_choice == '0':
             print("Exiting QR Code Generator.")
             break
@@ -89,9 +85,23 @@ def info_content(info_type_choice):
         return None
 
 def quick_qr():
-    pass
+    print("\n=== Quick QR Code ===")
+    info_type_choice = info_type()
+    if info_type_choice == 'cancel':
+        return
+
+    data = info_content(info_type_choice)
+    if not data:
+        print("No data provided. Returning to main menu.")
+        return
+
+    filename = input("Enter filename to save (without extension): ").strip()
+    qr = segno.make(data)
+    qr.save(f"{filename}.png")
+    print(f"✅ QR code saved as {filename}.png")
 
 def custom_qr():
     pass
 
-start()
+if __name__ == "__main__":
+    start()
