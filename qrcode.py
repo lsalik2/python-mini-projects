@@ -69,7 +69,16 @@ def info_type():
             print('Please type a valid number.')
 
 def info_content(info_type_choice):
-    pass
+    if info_type_choice == 'text':
+        return input("Enter the text to encode: ")
+    elif info_type_choice == 'link':
+        return input("Enter the URL to encode: ")
+    elif info_type_choice in ['contact', 'wifi', 'geo', 'image', 'epc']:
+        print(f"The '{info_type_choice}' type is not implemented yet.")
+        return None
+    else:
+        print("Unknown type.")
+        return None
 
 def quick_qr():
     info_type_choice = info_type()
