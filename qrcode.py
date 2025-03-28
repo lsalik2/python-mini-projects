@@ -33,13 +33,16 @@ def start():
 
         if mode_choice == '1':
             quick_qr()
+            break
         elif mode_choice == '2':
             custom_qr()
+            break
         else:
             print('Please type a valid number.')
 
 def info_type():
     while True:
+        print("\nWhat type of information are you encoding?")
         print("1. Text")
         print("2. Website Link")
         print("3. Contact Information")
@@ -48,27 +51,24 @@ def info_type():
         print("6. Image")
         print("7. EPC (European Payment Council QR Codes)")
 
-        info_type_choice = input("Please select what type of information you are encoding: ").strip()
+        choice = input("Enter number: ").strip()
 
-        if info_type_choice == '1':
-            return 'text'
-        elif info_type_choice == '2':
-            return 'link'
-        elif info_type_choice == '3':
-            return 'contact'
-        elif info_type_choice == '4':
-            return 'wifi'
-        elif info_type_choice == '5':
-            return 'geo'
-        elif info_type_choice == '6':
-            return 'image'
-        elif info_type_choice == '7':
-            return 'epc'
+        mapping = {
+            '1': 'text',
+            '2': 'link',
+            '3': 'contact',
+            '4': 'wifi',
+            '5': 'geo',
+            '6': 'image',
+            '7': 'epc'
+        }
+
+        if choice in mapping:
+            return mapping[choice]
         else:
             print('Please type a valid number.')
 
-
-def info_content():
+def info_content(info_type_choice):
     pass
 
 def quick_qr():
@@ -83,9 +83,12 @@ def quick_qr():
         pass
     elif info_type_choice == 'geo':
         pass
-    else:
-        print('This feature is not yet implemented :(')
+    elif info_type_choice == 'image':
         pass
+    elif info_type_choice == 'epc':
+        pass
+    else:
+        print('Error: Cannot establish information type.')
 
 def custom_qr():
     info_type_choice = info_type()
@@ -99,8 +102,11 @@ def custom_qr():
         pass
     elif info_type_choice == 'geo':
         pass
-    else:
-        print('This feature is not yet implemented :(')
+    elif info_type_choice == 'image':
         pass
+    elif info_type_choice == 'epc':
+        pass
+    else:
+        print('Error: Cannot establish information type.')
 
 start()
