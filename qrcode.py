@@ -1,7 +1,7 @@
 import segno
 
 # When run, prompt the user with the choice of "Quick QR Code" or "Custom QR Code"
-    # Quick QR Code will just prompt the user for the information being converted and create a basic QR code.
+    # Quick QR Code will just create a basic QR code.
     # Custom QR Code will let the user customize colors, size, etc.
 
 # For both, prompt the user for the information being converted into the QR code. 
@@ -16,3 +16,18 @@ import segno
         # If color option chosen, prompt user with options for dark, data_dark and data_light options with color codes.
         # If custom image option is chosen, ask user for filepath to image
 # At this point, Custom QR Code is finished.
+
+def quick_qr:
+    if info_type = text:
+        pass
+    elif info_type = link:
+        pass
+    elif info_type = contact:
+        pass
+    elif info_type = wifi:
+        pass
+    elif info_type = geo:
+        pass
+    else:
+        print('This feature is not yet implemented :(')
+        break
