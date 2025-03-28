@@ -99,7 +99,24 @@ def quick_qr():
     print(f"QR code saved as {filename}.png")
 
 def custom_qr():
-    pass
+    print("\n=== Custom QR Code ===")
+    info_type_choice = info_type()
+    if info_type_choice == 'cancel':
+        return
+    data = info_content(info_type_choice)
+    if not data:
+        print("No data provided. Returning to main menu.")
+        return
+
+    # Size customization
+
+    # Color customization
+
+    filename = input("Enter filename to save (without extension): ").strip()
+    qr = segno.make(data)
+    qr.save(f"{filename}.png")
+    print(f"Custom QR code saved as {filename}.png")
+
 
 if __name__ == "__main__":
     start()
