@@ -54,6 +54,7 @@ def info_type():
         print("5. Geolocation")
         print("6. Image")
         print("7. EPC (European Payment Council QR Codes)")
+        print("0. Cancel")
 
         choice = input("Enter number: ").strip()
 
@@ -64,7 +65,8 @@ def info_type():
             '4': 'wifi',
             '5': 'geo',
             '6': 'image',
-            '7': 'epc'
+            '7': 'epc',
+            '0': 'cancel'
         }
 
         if choice in mapping:
@@ -79,6 +81,8 @@ def info_content(info_type_choice):
         return input("Enter the URL to encode: ")
     elif info_type_choice in ['contact', 'wifi', 'geo', 'image', 'epc']:
         print(f"The '{info_type_choice}' type is not implemented yet.")
+        return None
+    elif info_type_choice == 'cancel':
         return None
     else:
         print("Unknown type.")
